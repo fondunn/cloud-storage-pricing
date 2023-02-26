@@ -5,9 +5,112 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/styles/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <title>Cloude Storage Pricing</title>
 </head>
 <body>
+  <div class="container">
+    <h1 class="label">Cloud Storage Pricing</h1>
+    <div class="calculator">
+      <div class="ranges">
+        <div class="rangeContainer">
+          <div class="rangeLabel">
+            <p>Storage:</p>
+            <p>
+              <span id="storageRangeValue">0</span>
+              GB
+            </p>
+          </div>
+          <input 
+          type="range" 
+          name="" 
+          id="storageRange" 
+          step="1" 
+          min="0" 
+          max="1000" 
+          value="0"
+          oninput="updateRange(this.value, 'storage')"
+          onchange="updateRange(this.value, 'storage')"
+          >
+        </div>
+        <div class="rangeContainer">
+          <div class="rangeLabel">
+            <p>Transfer:</p>
+            <p>
+              <span id="transferRangeValue">0</span>
+              GB
+            </p>
+          </div>
+          <input 
+          type="range" 
+          name="" 
+          id="transferRange" 
+          step="1" 
+          min="0" 
+          max="1000" 
+          value="0"
+          oninput="updateRange(this.value, 'transfer')"
+          onchange="updateRange(this.value, 'transfer')"
+          >
+        </div>
+      </div>
+      <div class="chartContainer">
+        <div class="companies">
+          <div class="company">
+            <p>BlackBlaze</p>
+          </div>
+          <div class="company">
+            <p>Bunny</p>
+            <fieldset class="fieldset" id="fieldsetBunny" onchange="changeRadio('fieldsetBunny', 'bunny')">
+              <div>
+                <input type="radio" id="radioHdd" name="bunny" value="hdd" checked>
+                <label for="hdd">HDD</label>
+              </div>
+              <div>
+                <input type="radio" id="radioSsd" name="bunny" value="ssd">
+                <label for="ssd">SSD</label>
+              </div>
+            </fieldset>
+          </div>
+          <div class="company">
+            <p>ScaleWay</p>
+            <fieldset class="fieldset" id="fieldsetScaleway" onchange="changeRadio('fieldsetScaleway', 'scaleway')">
+              <div>
+                <input type="radio" id="radioMulti" name="scaleway" value="multi" checked>
+                <label for="multi">Multi</label>
+              </div>
+              <div>
+                <input type="radio" id="radioSingle" name="scaleway" value="single">
+                <label for="single">Single</label>
+              </div>
+            </fieldset>
+          </div>
+          <div class="company">
+            <p>Vultr</p>
+          </div>
+        </div>
+        <div class="chart">
+          <div class="companyChart" id="blackblazeChart">
+            <span id="blackblazeChartValue">0</span>
+          </div>
+          <div class="companyChart" id="bunnyChart">
+            <span id="bunnyChartValue">0</span>
+          </div>
+          <div class="companyChart" id="scalewayChart">
+            <span id="scalewayChartValue">0</span>
+          </div>
+          <div class="companyChart" id="vultrChart">
+            <span id="vultrChartValue">0</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/initialValues.js"></script>
+  <script src="/js/utils.js"></script>
   <script src="/js/index.js"></script>
 </body>
 </html>

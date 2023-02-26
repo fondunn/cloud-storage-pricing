@@ -2,5 +2,179 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
+.container {
+  min-height: 100vh;
+  width: 100vw;
+  background-color: #E9F1F2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.label {
+  margin-bottom: 1rem;
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.calculator {
+  display: flex;
+  flex-direction: column;
+  min-width: 200px;
+  padding: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background-color: #27CDF2;
+}
+.ranges {
+  display: flex;
+  width: 100%;
+}
+
+.rangeContainer {
+  padding: 0 1rem;
+  width: 100%;
+}
+.rangeContainer > input {
+  width: 100%;
+}
+.rangeLabel {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.chartContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem;
+}
+
+.chart {
+  background-color: #222222;
+  color: #f0f0f0;
+  padding-left: 5px;
+  min-height: 100px;
+  width: 200px;
+  height: 200px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.companyChart {
+  background-color: lightgray;
+  position: relative;
+  height: 20px;
+  max-width: 200px;
+  width: 1%;
+}
+
+.companyChart > span {
+  position: absolute;
+  /* left: 10px; */
+  right: -55px;
+}
+
+.companies {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-right: 1rem;
+  padding: 1rem;
+  min-width: 200px;
+}
+
+
+.company {
+  display: flex;
+  flex-direction: column;
+}
+
+.company > fieldset {
+  width: 100%;
+  display: flex;
+}
+.company > fieldset > div {
+  margin-right: 1rem;
+}
+.company p {
+  font-size: 12px;
+  text-align: left;
+}
+
+.fieldset {
+  border: none;
+  display: flex;
+  font-size: 14px;
+}
+
+@media screen and (max-width: 768px) {
+  .ranges {
+    order: 2;
+    flex-direction: column;
+    align-items: center;
+    height: 140px;
+    justify-content: space-around;
+  }
+  .rangeContainer {
+    width: 80%;
+  }
+  .calculator {
+    margin: 1.5rem;
+  }
+  .rangeContainer > input {
+    width: 100%;
+  }
+  .chartContainer {
+    order: 1;
+    max-width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+  .companies {
+    order: 2;
+    flex-direction: row;
+    margin: 0;
+  }
+  .company p {
+    font-size: 12px;
+    text-align: center;
+  }
+  .company > fieldset {
+    flex-direction: column;
+  }
+  .company > fieldset > div {
+    margin: 0.5rem;
+    display: flex;
+  }
+  .company > fieldset > div > input {
+    margin-right: 0.25rem;
+  }
+  .chart {
+    order: 1;
+    align-items: flex-end;
+    height: 200px;
+    width: 100%;
+    flex-direction: row;
+    border: none;
+    border-bottom: 4px solid black;
+    justify-content: space-around;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+  .companyChart {
+    height: 0%;
+    width: 20px;
+  }
+  .companyChart > span {
+    top: -25px;
+    left: 0;
+  }
+}
